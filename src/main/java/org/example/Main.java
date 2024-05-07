@@ -6,7 +6,6 @@ import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-// Main
 public class Main {
 
     public static void main(String[] args) {
