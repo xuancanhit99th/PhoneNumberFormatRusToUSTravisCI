@@ -5,18 +5,8 @@ jdk:
 before_install:
   - chmod +x gradlew
 
-addons:
-  sonarcloud:
-    organization: "xuancanhit99"
-    #    token:
-    #      secure: "VxzNFusUImiEWZSCROsBbbP97jXuPwlpnphcAu1n/eaRByqvWW3gE6ffVUWetf6iJ6EHJs/KJyr7zs2WmN0ypi9nvTys982eXRCyX7P95eSKQQ+7HOmTwD+rdNdziIbbU2OAkOFVQkMQ6HSJ8KixKxkfd8kAXrLQ55/mpdLXv+AShOlzyyR02kGGW5LgA9FwjulIINQlhF3GUZ8pzIi0R6g0EAN+Mdbd6gaA9VXFj9GpZuTQglIHCnaY6x9O56D1109MJxCAaNVDosshtgUzkHhXXLI0c8wD+7BxtBRkj9yaPEiG93e1xongAn3JQ56RGbddG5E3u/fSmOu0xW2sRHwiMq4IoZrHL1tqUQ9v/iiV9aQTQpO6UCuXzRwIux39xkUv56PkanS9w/p4eYb2gO6nS8rQW1fE9CD/bNLYF1eojMvbAHf9PJ14U6azrsGNQPWijeCENnTA5esz+t5yt0Xjo+r2JNTfMO7RCoWSCjrr0JPFkfgu4WtvwYZTcITrXId79j0BprXyb20dW0WQyC4bebkqDgO0YRkWJxTgXvFTljF7t3uHUr9jQZ6FN6dVPxQuTKIPRBe6VCh+N76+MCAvf2FNEp37AFNGh2B48oOVZ5gqBBWssPl3A33rL/ETlSM3FI4iu9ThmJhedo+mprUu/KZufPOIE2IaciRutik=" # encrypted value of your token
-    projectKey: "xuancanhit99_TravisCI-SonarCloud-PJ"
-
 script:
   - ./gradlew build
-  #  - ./gradlew sonarqube
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
 
 cache:
   directories:
