@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("jacoco") // Add JaCoCo plugin
 }
 
 group = "org.example"
@@ -16,4 +17,24 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+// Configure JaCoCo
+configure<JacocoPluginExtension> {
+    toolVersion = "0.8.7" // Use desired JaCoCo version
+}
+
+// Create code coverage check task
+val customJacocoTestReport = tasks.register<JacocoReport>("customJacocoTestReport") {
+    dependsOn("test")
+    reports {
+        xml.required.set(true)
+        csv.required.set(false)
+        html.required.set(true)
+        html.outputLocation.set(layout.buildDirectory.dir("reports/jacoco"))
+    }
+}
+
+tasks.named("check") {
+    dependsOn(customJacocoTestReport)
 }
