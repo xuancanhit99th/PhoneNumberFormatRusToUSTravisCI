@@ -37,7 +37,7 @@ public class Main {
         System.out.println(result.toString());
     }
 
-    private static String formatPhoneNumber(String phone) {
+    static String formatPhoneNumber(String phone) {
         // Удаляем все кроме цифр
         String digits = phone.replaceAll("\\D", "");
         // Предполагаем, что код страны и первые три цифры номера могут быть разделены пробелом или дефисом, а также могут быть заключены в скобки
