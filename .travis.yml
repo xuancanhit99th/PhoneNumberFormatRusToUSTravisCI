@@ -18,6 +18,7 @@ cache:
 
 after_success:
   - ./gradlew test
+  - ./gradlew coveralls
   - bash <(curl -s https://codecov.io/bash)
 
 
