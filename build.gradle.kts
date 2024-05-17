@@ -37,6 +37,12 @@ val customJacocoTestReport = tasks.register<JacocoReport>("customJacocoTestRepor
     }
 }
 
+// Configure coveralls task
+tasks.withType<JavaExec> {
+    if (name == "coveralls") {
+        systemProperty("jacocoReportPath", "${layout.buildDirectory.get().asFile}/reports/jacoco/test/jacocoTestReport.xml")
+    }
+}
 
 tasks.named("check") {
     dependsOn(customJacocoTestReport)
