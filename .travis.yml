@@ -7,6 +7,7 @@ before_install:
 
 script:
   - ./gradlew build
+#  - ./gradlew build jacocoTestReport
 
 cache:
   directories:
@@ -17,5 +18,6 @@ cache:
 
 after_success:
   - ./gradlew test
+#  - bash <(curl -s https://codecov.io/bash)
 
 
