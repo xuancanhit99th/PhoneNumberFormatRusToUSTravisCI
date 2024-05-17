@@ -1,6 +1,8 @@
 plugins {
     id("java")
     id("jacoco") // Add JaCoCo plugin
+    id("com.github.kt3k.coveralls") version "2.12.2"
+
 }
 
 group = "org.example"
@@ -34,6 +36,7 @@ val customJacocoTestReport = tasks.register<JacocoReport>("customJacocoTestRepor
         html.outputLocation.set(layout.buildDirectory.dir("reports/jacoco"))
     }
 }
+
 
 tasks.named("check") {
     dependsOn(customJacocoTestReport)
